@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font-family: 'Caveat', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Nanum Pen Script', cursive; */
+
+:root {
+    --fontFamilyOne: 'Caveat', cursive;
+    --fontFamilyTwo: 'Lato', sans-serif;
+    --mainColor: #95a5a5;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 33vh;
+    background-image: url(../img/laptop.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-shadow: 0 0 3px var(--mainColor);
+}
+
+header h1 {
+    padding-top: 10px;
+    font-family: var(--fontFamilyOne);
+    font-size: 40px;
+    text-align: center;
+}
+
+header i {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+header .date {
+    position: absolute;
+    bottom: 1vh;
+    left: 2vh;
+    font-family: var(--fontFamilyTwo);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* LIST */
+
+.list {
+    width: 100%;
+    height: 59vh;
+    padding: 5px 20px;
+}
+
+.tasks {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.task {
+    position: relative;
+    display: flex;
+    margin-top: 8px;
+    border-bottom: 1px solid var(--mainColor);
+    border-radius: 10%;
+    font-family: var(--fontFamilyOne);
+    font-size: 18px;
+    color: #334141;
+    font-weight: bold;
+    animation: show 1.5s ease both;
+}
+
+.task i {
+    cursor: pointer;
+    height: 100%;
+    align-self: center;
+}
+
+.task i.fa-spinner,
+.task i.fa-check-circle {
+    margin-right: 8px;
+    color: #33414155;
+    transition: .7s;
+}
+
+.task i.fa-spinner.active {
+    color: #f2c705;
+    animation: spin 3s ease infinite;
+}
+
+.task i.fa-check-circle.done {
+    color: #519e00;
+}
+
+.task .fa-trash-alt {
+    font-size: 22px;
+    transition: .3s;
+}
+
+.task p {
+    width: 76%;
+    max-width: 76%;
+    padding: 0 10px 0 5px;
+    font-size: 32px;
+    overflow: hidden;
+}
+
+.task p.done {
+    text-decoration: line-through;
+    color: #33414155;
+}
+
+.task .action {
+    opacity: 0;
+    position: absolute;
+    top: -10px;
+    font-size: 18px;
+}
+
+.task .action.indicate-progress {
+    color: #f2c705;
+    animation: progress-indicator-show 2s .5s ease;
+}
+
+.task .action.indicate-done {
+    color: #519e00;
+    animation: done-indicator-show 2s .5s ease;
+}
+
+/* INPUT */
+
+.add-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 8vh;
+    padding: 5px 10px;
+    box-shadow: 0 0 3px var(--mainColor);
+    background-color: #dce3e1;
+}
+
+.add-task .insert-btn {
+    flex-basis: 6vh;
+    height: 6vh;
+    margin-right: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.add-task .insert-btn:focus {
+    outline: none;
+}
+
+.add-task .insert-btn i {
+    font-size: 6vh;
+    color: #a9562b;
+    transition: .3s;
+}
+
+.add-task .task-input {
+    flex-basis: 80vw;
+    height: 5vh;
+    border: 2px solid var(--mainColor);
+    border-radius: 5px;
+    padding-left: 5px;
+    font-family: var(--fontFamilyTwo);
+    font-size: 15px;
+    font-weight: bold;
+    color: #324040;
+}
+
+.add-task .task-input:focus {
+    outline: none;
+    border-color: #a9562b88;
+    box-shadow: 0 0 4px var(--mainColor);
+}
+
+.add-task .task-input::placeholder {
+    color: var(--mainColor);
+    background-color: #fff;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    70% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes progress-indicator-show {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes done-indicator-show {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    39.99% {
+        transform: rotate(0);
+    }
+
+    52% {
+        transform: rotate(15deg);
+    }
+
+    64% {
+        transform: rotate(-15deg);
+    }
+
+    76% {
+        transform: rotate(15deg);
+    }
+
+    88% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@media (min-width:700px) {
+    /* CONTENT WRAPPER */
+
+    .content-wrap {
+        width: 640px;
+        margin: 0 auto;
+        box-shadow: 0 0 5px var(--mainColor);
+    }
+
+    /* HEADER */
+
+    header h1 {
+        font-size: 60px;
+    }
+
+    header i {
+        font-size: 36px;
+    }
+
+    header i:hover {
+        transform: rotate(180deg);
+    }
+
+    header .date {
+        font-size: 24px;
+    }
+
+    /* LIST */
+    .task {
+        font-size: 19px;
+    }
+
+    .task p {
+        width: 82%;
+        max-width: 82%;
+        font-size: 36px;
+    }
+
+    .task .fa-trash-alt {
+        font-size: 25px;
+    }
+
+    .task .fa-trash-alt:hover {
+        color: #f24905;
+        animation: shake .8s linear;
+    }
+
+    /* INPUT */
+
+    .add-task .task-input {
+        font-size: 22px;
+    }
+
+    .add-task .insert-btn:hover i {
+        color: #334141;
+    }
+}
