@@ -322,7 +322,7 @@ header .date {
     }
 }
 
-@media (min-width:500px) and (orientation:landscape) {
+@media (max-width:1023px) and (orientation:landscape) {
 
     /* HEADER */
 
