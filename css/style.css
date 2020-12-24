@@ -30,10 +30,11 @@ header {
 }
 
 header h1 {
-    padding-top: 10px;
+    padding-top: 15px;
     font-family: var(--fontFamilyOne);
     font-size: 40px;
     text-align: center;
+    line-height: 100%;
 }
 
 header i {
@@ -153,7 +154,6 @@ header .date {
 }
 
 .add-task .insert-btn {
-    flex-basis: 6vh;
     height: 6vh;
     margin-right: 10px;
     border: none;
@@ -282,7 +282,92 @@ header .date {
     }
 }
 
-@media (min-width:700px) {
+@media (min-width:680px) and (orientation:portrait) {
+
+    /* HEADER */
+
+    header h1 {
+        font-size: 50px;
+    }
+
+    /* LIST */
+
+    .list {
+        height: 61vh;
+        padding: 5px 60px;
+    }
+
+    .task p {
+        width: 85%;
+        max-width: 85%;
+    }
+
+    /* INPUT */
+
+    .add-task {
+        height: 6vh;
+    }
+
+    .add-task .insert-btn {
+
+        height: 5vh;
+    }
+
+    .add-task .insert-btn i {
+        font-size: 5vh;
+    }
+
+    .add-task .task-input {
+        height: 4vh;
+    }
+}
+
+@media (min-width:500px) and (orientation:landscape) {
+
+    /* HEADER */
+
+    header h1 {
+        color: #334141;
+    }
+
+    header .date {
+        left: 5vh;
+        font-size: 18px;
+    }
+
+    /* LIST */
+
+    .list {
+        height: 57vh;
+        padding: 5px 60px;
+    }
+
+    .task p {
+        width: 85%;
+        max-width: 85%;
+    }
+
+    /* INPUT */
+
+    .add-task {
+        height: 10vh;
+    }
+
+    .add-task .insert-btn {
+        height: 7vh;
+    }
+
+    .add-task .insert-btn i {
+        font-size: 7vh;
+    }
+
+    .add-task .task-input {
+        height: 8vh;
+    }
+}
+
+@media (min-width:1024px) and (orientation:landscape) {
+
     /* CONTENT WRAPPER */
 
     .content-wrap {
@@ -295,6 +380,7 @@ header .date {
 
     header h1 {
         font-size: 60px;
+        color: white;
     }
 
     header i {
