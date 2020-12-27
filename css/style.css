@@ -74,6 +74,7 @@ header .date {
     font-size: 18px;
     color: #334141;
     font-weight: bold;
+    -webkit-animation: show 1.5s ease both;
     animation: show 1.5s ease both;
 }
 
@@ -92,6 +93,7 @@ header .date {
 
 .task i.fa-spinner.active {
     color: #f2c705;
+    -webkit-animation: spin 3s ease infinite;
     animation: spin 3s ease infinite;
 }
 
@@ -125,11 +127,13 @@ header .date {
 
 .task .action.indicate-progress {
     color: #f2c705;
+    -webkit-animation: progress-indicator-show 2s .5s ease;
     animation: progress-indicator-show 2s .5s ease;
 }
 
 .task .action.indicate-done {
     color: #519e00;
+    -webkit-animation: done-indicator-show 2s .5s ease;
     animation: done-indicator-show 2s .5s ease;
 }
 
@@ -183,9 +187,43 @@ header .date {
     box-shadow: 0 0 4px var(--mainColor);
 }
 
+.add-task .task-input::-webkit-input-placeholder {
+    color: var(--mainColor);
+    background-color: #fff;
+}
+
+.add-task .task-input::-moz-placeholder {
+    color: var(--mainColor);
+    background-color: #fff;
+}
+
+.add-task .task-input:-ms-input-placeholder {
+    color: var(--mainColor);
+    background-color: #fff;
+}
+
+.add-task .task-input::-ms-input-placeholder {
+    color: var(--mainColor);
+    background-color: #fff;
+}
+
 .add-task .task-input::placeholder {
     color: var(--mainColor);
     background-color: #fff;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    70% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
@@ -199,6 +237,20 @@ header .date {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -217,7 +269,36 @@ header .date {
 }
 
 
+@-webkit-keyframes progress-indicator-show {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
 @keyframes progress-indicator-show {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes done-indicator-show {
     0% {
         opacity: 0;
     }
@@ -242,6 +323,36 @@ header .date {
 
     100% {
         opacity: 0;
+    }
+}
+
+@-webkit-keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    39.99% {
+        transform: rotate(0);
+    }
+
+    52% {
+        transform: rotate(15deg);
+    }
+
+    64% {
+        transform: rotate(-15deg);
+    }
+
+    76% {
+        transform: rotate(15deg);
+    }
+
+    88% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }
 
@@ -404,6 +515,7 @@ header .date {
 
     .task .fa-trash-alt:hover {
         color: #f24905;
+        -webkit-animation: shake .8s linear;
         animation: shake .8s linear;
     }
 
