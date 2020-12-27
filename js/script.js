@@ -1,3 +1,5 @@
+// GENERAL VARIABLES
+
 const clearList = document.querySelector('.clear');
 const listContainer = document.querySelector('.tasks');
 const addBtn = document.querySelector('.insert-btn');
