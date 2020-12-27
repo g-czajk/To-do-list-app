@@ -30,6 +30,7 @@ function loadList(array) {
 }
 
 // CLEAR LOCAL STORAGE
+
 clearList.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
@@ -105,7 +106,7 @@ function btnClick(e) {
 
         localStorage.setItem("toDo", JSON.stringify(taskCollection));
 
-        id++
+        id++;
     }
     input.value = '';
 };

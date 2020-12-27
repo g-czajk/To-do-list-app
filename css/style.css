@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-/* font-family: 'Caveat', cursive;
-font-family: 'Lato', sans-serif;
-font-family: 'Noto Sans', sans-serif;
-font-family: 'Rubik', sans-serif;
-font-family: 'Nanum Pen Script', cursive; */
-
 :root {
     --fontFamilyOne: 'Caveat', cursive;
     --fontFamilyTwo: 'Lato', sans-serif;
@@ -112,7 +106,6 @@ header .date {
 
 .task p {
     width: 76%;
-    max-width: 76%;
     padding: 0 10px 0 5px;
     font-size: 32px;
     overflow: hidden;
@@ -299,7 +292,6 @@ header .date {
 
     .task p {
         width: 85%;
-        max-width: 85%;
     }
 
     /* INPUT */
@@ -327,6 +319,7 @@ header .date {
     /* HEADER */
 
     header h1 {
+        font-size: 50px;
         color: #334141;
     }
 
@@ -344,7 +337,6 @@ header .date {
 
     .task p {
         width: 85%;
-        max-width: 85%;
     }
 
     /* INPUT */
@@ -379,7 +371,8 @@ header .date {
     /* HEADER */
 
     header h1 {
-        font-size: 60px;
+        padding: 0;
+        font-size: 50px;
         color: white;
     }
 
@@ -392,7 +385,7 @@ header .date {
     }
 
     header .date {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     /* LIST */
@@ -402,7 +395,6 @@ header .date {
 
     .task p {
         width: 82%;
-        max-width: 82%;
         font-size: 36px;
     }
 
@@ -423,5 +415,16 @@ header .date {
 
     .add-task .insert-btn:hover i {
         color: #334141;
+    }
+}
+
+@media (min-width: 1400px) and (orientation:landscape) {
+    header h1 {
+        font-size: 60px;
+        padding-top: 15px;
+    }
+
+    header .date {
+        font-size: 24px;
     }
 }
