@@ -31,10 +31,10 @@ function loadList(array) {
     });
 }
 
-// CLEAR LOCAL STORAGE
+// REMOVE APP DATA FROM LOCAL STORAGE
 
 clearList.addEventListener("click", function () {
-    localStorage.clear();
+    localStorage.removeItem("toDo");
     location.reload();
 });
 
@@ -63,7 +63,6 @@ function addListElement(taskName, id, inProgress, done, deleted) {
     const progress = inProgress ? 'active' : '';
     const state = done ? 'done' : '';
     const lineThrough = done ? 'done' : '';
-
 
     const listElement = document.createElement('li');
     const spanIndicator = document.createElement('span');
@@ -118,15 +117,17 @@ addBtn.addEventListener('click', btnClick);
 // CHECK IN PROGRESS ICON
 
 function checkInProgress(element) {
+    const actionElement = element.parentNode.querySelector('.action');
+
     element.classList.toggle('active');
 
     if (element.classList.contains('active')) {
-        element.parentNode.querySelector('.action').classList.remove('indicate-done');
-        element.parentNode.querySelector('.action').classList.add('indicate-progress');
-        element.parentNode.querySelector('.action').textContent = 'w toku!';
+        actionElement.classList.remove('indicate-done');
+        actionElement.classList.add('indicate-progress');
+        actionElement.textContent = 'w toku!';
     } else {
-        element.parentNode.querySelector('.action').classList.remove('indicate-progress');
-        element.parentNode.querySelector('.action').classList.remove('indicate-done');
+        actionElement.classList.remove('indicate-progress');
+        actionElement.classList.remove('indicate-done');
     }
 
     document.querySelectorAll('.fa-spinner').forEach(icon => {
@@ -151,7 +152,10 @@ function checkInProgress(element) {
 // CHECK DONE ICON
 
 function checkDone(element) {
+    const actionElement = element.parentNode.querySelector('.action');
+
     element.classList.toggle('done');
+
     element.parentNode.querySelector('.text').classList.toggle('done');
     if (element.parentNode.querySelector('.fa-spinner').classList.contains('active')) {
         element.parentNode.querySelector('.fa-spinner').classList.remove('active');
@@ -159,12 +163,12 @@ function checkDone(element) {
     }
 
     if (element.classList.contains('done')) {
-        element.parentNode.querySelector('.action').classList.remove('indicate-progress');
-        element.parentNode.querySelector('.action').classList.add('indicate-done');
-        element.parentNode.querySelector('.action').textContent = 'zrobione!';
+        actionElement.classList.remove('indicate-progress');
+        actionElement.classList.add('indicate-done');
+        actionElement.textContent = 'zrobione!';
     } else {
-        element.parentNode.querySelector('.action').classList.remove('indicate-done');
-        element.parentNode.querySelector('.action').classList.remove('indicate-done');
+        actionElement.classList.remove('indicate-done');
+        actionElement.classList.remove('indicate-done');
     }
 
     taskCollection[element.parentNode.id].done = taskCollection[element.parentNode.id].done ? false : true;
@@ -178,7 +182,7 @@ function deleteTask(element) {
     taskCollection[element.parentNode.id].delete = true;
 }
 
-// ADDEVENTLISTENER FOR EACH OF THE ICONS + UPDATE LOCAL STORAGE
+// EVENT DELEGATION FOR ICONS + UPDATE LOCAL STORAGE
 
 listContainer.addEventListener('click', function (event) {
     const element = event.target;
