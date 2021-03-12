@@ -5,9 +5,13 @@
 }
 
 :root {
-    --fontFamilyOne: 'Caveat', cursive;
-    --fontFamilyTwo: 'Lato', sans-serif;
+    --fontFamilyOne: "Caveat", cursive;
+    --fontFamilyTwo: "Lato", sans-serif;
     --mainColor: #95a5a5;
+}
+
+body {
+    background-color: rgba(220, 220, 220, 0.2);
 }
 
 /* HEADER */
@@ -37,7 +41,7 @@ header i {
     right: 2vh;
     font-size: 24px;
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 header .date {
@@ -55,6 +59,7 @@ header .date {
     width: 100%;
     height: 59vh;
     padding: 5px 20px;
+    background-color: white;
 }
 
 .tasks {
@@ -88,7 +93,7 @@ header .date {
 .task i.fa-check-circle {
     margin-right: 8px;
     color: #33414155;
-    transition: .7s;
+    transition: 0.7s;
 }
 
 .task i.fa-spinner.active {
@@ -103,7 +108,7 @@ header .date {
 
 .task .fa-trash-alt {
     font-size: 22px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .task p {
@@ -127,14 +132,14 @@ header .date {
 
 .task .action.indicate-progress {
     color: #f2c705;
-    -webkit-animation: progress-indicator-show 2s .5s ease;
-    animation: progress-indicator-show 2s .5s ease;
+    -webkit-animation: progress-indicator-show 2s 0.5s ease;
+    animation: progress-indicator-show 2s 0.5s ease;
 }
 
 .task .action.indicate-done {
     color: #519e00;
-    -webkit-animation: done-indicator-show 2s .5s ease;
-    animation: done-indicator-show 2s .5s ease;
+    -webkit-animation: done-indicator-show 2s 0.5s ease;
+    animation: done-indicator-show 2s 0.5s ease;
 }
 
 /* INPUT */
@@ -165,8 +170,9 @@ header .date {
 
 .add-task .insert-btn i {
     font-size: 6vh;
-    color: #a9562b;
-    transition: .3s;
+    color: #334141;
+    text-shadow: 0 1px 2px var(--mainColor);
+    transition: 0.3s;
 }
 
 .add-task .task-input {
@@ -268,7 +274,6 @@ header .date {
     }
 }
 
-
 @-webkit-keyframes progress-indicator-show {
     0% {
         opacity: 0;
@@ -282,7 +287,6 @@ header .date {
         opacity: 0;
     }
 }
-
 
 @keyframes progress-indicator-show {
     0% {
@@ -386,8 +390,7 @@ header .date {
     }
 }
 
-@media (min-width:680px) and (orientation:portrait) {
-
+@media (min-width: 680px) and (orientation: portrait) {
     /* HEADER */
 
     header h1 {
@@ -412,7 +415,6 @@ header .date {
     }
 
     .add-task .insert-btn {
-
         height: 5vh;
     }
 
@@ -425,8 +427,7 @@ header .date {
     }
 }
 
-@media (max-width:1023px) and (orientation:landscape) {
-
+@media (max-width: 1023px) and (orientation: landscape) {
     /* HEADER */
 
     header h1 {
@@ -469,8 +470,7 @@ header .date {
     }
 }
 
-@media (min-width:1024px) and (orientation:landscape) {
-
+@media (min-width: 1024px) and (orientation: landscape) {
     /* CONTENT WRAPPER */
 
     .content-wrap {
@@ -515,8 +515,8 @@ header .date {
 
     .task .fa-trash-alt:hover {
         color: #f24905;
-        -webkit-animation: shake .8s linear;
-        animation: shake .8s linear;
+        -webkit-animation: shake 0.8s linear;
+        animation: shake 0.8s linear;
     }
 
     /* INPUT */
@@ -526,11 +526,11 @@ header .date {
     }
 
     .add-task .insert-btn:hover i {
-        color: #334141;
+        opacity: 0.8;
     }
 }
 
-@media (min-width: 1400px) and (orientation:landscape) {
+@media (min-width: 1400px) and (orientation: landscape) {
     header h1 {
         font-size: 60px;
         padding-top: 15px;
